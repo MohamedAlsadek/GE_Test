@@ -16,12 +16,85 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="jnP-rE-fI3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A6g-IH-9eY">
+                                <rect key="frame" x="0.0" y="95" width="320" height="167"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2Ph-jW-5Ok" customClass="MLPAutoCompleteTextField">
+                                        <rect key="frame" x="38" y="8" width="245" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="autoCompleteDataSource" destination="v9j-oA-Diy" id="GWe-fg-f73"/>
+                                            <outlet property="autoCompleteDelegate" destination="v9j-oA-Diy" id="HVb-7R-4w2"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ETS-PV-xf9" customClass="MLPAutoCompleteTextField">
+                                        <rect key="frame" x="38" y="69" width="245" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="autoCompleteDataSource" destination="v9j-oA-Diy" id="QZK-V7-maP"/>
+                                            <outlet property="autoCompleteDelegate" destination="v9j-oA-Diy" id="v6s-Bf-Nbl"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ON3-yN-DxZ">
+                                        <rect key="frame" x="38" y="129" width="245" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4Q-u3-rGj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trains, Buses and Flights! Find The Best Way To Travel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLn-04-hbu">
+                                        <rect key="frame" x="20" y="44" width="275" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GoEuro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0y-LU-STE">
+                                        <rect key="frame" x="20" y="15" width="82" height="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-1I-LJk">
+                                <rect key="frame" x="125" y="294" width="64" height="64"/>
+                                <state key="normal" backgroundImage="btn_search"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jnP-rE-fI3" secondAttribute="bottom" id="8ZG-FX-zNd"/>
+                            <constraint firstAttribute="trailing" secondItem="jnP-rE-fI3" secondAttribute="trailing" id="DGA-zP-r0I"/>
+                            <constraint firstItem="jnP-rE-fI3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HL9-de-67d"/>
+                            <constraint firstItem="jnP-rE-fI3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uPQ-1u-uOu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldFrom" destination="2Ph-jW-5Ok" id="ExZ-u7-uaS"/>
+                        <outlet property="textFieldTo" destination="ETS-PV-xf9" id="wvN-QO-55p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="v9j-oA-Diy" userLabel="Autocomplete Datasource" customClass="DEMODataSource"/>
             </objects>
-            <point key="canvasLocation" x="172.26666666666665" y="274.06"/>
+            <point key="canvasLocation" x="172" y="274"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="750" height="500"/>
+        <image name="btn_search" width="64" height="64"/>
+    </resources>
 </document>

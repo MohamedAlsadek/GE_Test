@@ -8,11 +8,15 @@
 
 #import "FormViewController.h"
 #import "FormViewModel.h"
+#import "MLPAutoCompleteTextFieldDelegate.h"
+#import "MLPAutoCompleteTextField.h"
+#import "DEMOCustomAutoCompleteCell.h"
 
-@interface FormViewController ()
+@interface FormViewController () <MLPAutoCompleteTextFieldDelegate>
 
 @property (nonatomic, strong) FormViewModel *viewModel;
-
+@property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldFrom;
+@property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldTo;
 
 @end
 
@@ -28,9 +32,14 @@
 #pragma mark - initUI
 - (void)initUI {
     _viewModel = [[FormViewModel alloc] initWithDelegate:self];
-    
     [self showLoadingIndicator];
     [_viewModel getLocationsForKeyword:@"ham"];
+    
+    // Textfield configuration
+    [self.textFieldFrom registerAutoCompleteCellClass:[DEMOCustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];    
+    [self.textFieldTo registerAutoCompleteCellClass:[DEMOCustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
+
+
 }
 
 - (void) updateUI {
@@ -42,6 +51,53 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - textField 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - MLPAutoCompleteTextField Delegate
+- (BOOL)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+          shouldConfigureCell:(UITableViewCell *)cell
+       withAutoCompleteString:(NSString *)autocompleteString
+         withAttributedString:(NSAttributedString *)boldedString
+        forAutoCompleteObject:(id<MLPAutoCompletionObject>)autocompleteObject
+            forRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    //This is your chance to customize an autocomplete tableview cell before it appears in the autocomplete tableview    
+    return YES;
+}
+
+- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+  didSelectAutoCompleteString:(NSString *)selectedString
+       withAutoCompleteObject:(id<MLPAutoCompletionObject>)selectedObject
+            forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(selectedObject){
+        NSLog(@"selected object from autocomplete menu %@ with string %@", selectedObject, [selectedObject autocompleteString]);
+    } else {
+        NSLog(@"selected string '%@' from autocomplete menu", selectedString);
+    }
+}
+
+- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField willHideAutoCompleteTableView:(UITableView *)autoCompleteTableView {
+    NSLog(@"Autocomplete table view will be removed from the view hierarchy");
+}
+
+- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField willShowAutoCompleteTableView:(UITableView *)autoCompleteTableView {
+    NSLog(@"Autocomplete table view will be added to the view hierarchy");
+}
+
+- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField didHideAutoCompleteTableView:(UITableView *)autoCompleteTableView {
+    NSLog(@"Autocomplete table view ws removed from the view hierarchy");
+}
+
+- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField didShowAutoCompleteTableView:(UITableView *)autoCompleteTableView {
+    NSLog(@"Autocomplete table view was added to the view hierarchy");
 }
 
 @end
