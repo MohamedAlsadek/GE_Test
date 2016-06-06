@@ -45,6 +45,9 @@
     return self;
 }
 
+- (NSString *)autocompleteString {
+    return _locationFullName;
+}
 
 + (NSArray *)parseLocationObjectsFromJson:(NSDictionary *)jsonDictionary {
     

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MLPAutoCompletionObject.h"
 #pragma mark - Model - Photo
 static NSString* const kId              = @"_id";
 static NSString* const kKey             = @"key";
@@ -29,7 +29,7 @@ static NSString* const kLongitude       = @"longitude";
 @end
 
 
-@interface Location : NSObject
+@interface Location : NSObject <MLPAutoCompletionObject>
 
 @property (nonatomic, strong) NSString *locationId ;
 @property (nonatomic, strong) NSString *locationKey ;

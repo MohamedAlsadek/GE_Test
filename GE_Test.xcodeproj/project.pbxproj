@@ -19,7 +19,6 @@
 		450AB4861D05B06600DAE116 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4851D05B06600DAE116 /* Location.m */; };
 		450AB48A1D05B35A00DAE116 /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4891D05B35A00DAE116 /* APIService.m */; };
 		450AB48E1D05B49400DAE116 /* LocationDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB48D1D05B49400DAE116 /* LocationDataService.m */; };
-		453AEE081D05C04200A28C4F /* FormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE071D05C04200A28C4F /* FormViewModel.m */; };
 		453AEE0C1D05C05D00A28C4F /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE0B1D05C05D00A28C4F /* FormViewController.m */; };
 		453AEE151D05C69B00A28C4F /* LayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE141D05C69B00A28C4F /* LayoutManager.m */; };
 		453AEE191D05C6B700A28C4F /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE181D05C6B700A28C4F /* ParentViewController.m */; };
@@ -75,11 +74,8 @@
 		450AB4891D05B35A00DAE116 /* APIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIService.m; sourceTree = "<group>"; };
 		450AB48C1D05B49400DAE116 /* LocationDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDataService.h; sourceTree = "<group>"; };
 		450AB48D1D05B49400DAE116 /* LocationDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataService.m; sourceTree = "<group>"; };
-		453AEE061D05C04200A28C4F /* FormViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewModel.h; sourceTree = "<group>"; };
-		453AEE071D05C04200A28C4F /* FormViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewModel.m; sourceTree = "<group>"; };
 		453AEE0A1D05C05D00A28C4F /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
 		453AEE0B1D05C05D00A28C4F /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
-		453AEE0D1D05C22B00A28C4F /* ViewModelUpdateUIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelUpdateUIDelegate.h; sourceTree = "<group>"; };
 		453AEE131D05C69B00A28C4F /* LayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutManager.h; sourceTree = "<group>"; };
 		453AEE141D05C69B00A28C4F /* LayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutManager.m; sourceTree = "<group>"; };
 		453AEE171D05C6B700A28C4F /* ParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
@@ -215,7 +211,6 @@
 			children = (
 				450AB47E1D05ABC300DAE116 /* ViewControllers */,
 				450AB47D1D05ABAD00DAE116 /* Storyboards */,
-				453AEE091D05C04600A28C4F /* ViewModels */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -277,16 +272,6 @@
 				450AB48D1D05B49400DAE116 /* LocationDataService.m */,
 			);
 			name = LocationDataSercie;
-			sourceTree = "<group>";
-		};
-		453AEE091D05C04600A28C4F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				453AEE0D1D05C22B00A28C4F /* ViewModelUpdateUIDelegate.h */,
-				453AEE061D05C04200A28C4F /* FormViewModel.h */,
-				453AEE071D05C04200A28C4F /* FormViewModel.m */,
-			);
-			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		453AEE161D05C69F00A28C4F /* Utilities */ = {
@@ -538,7 +523,6 @@
 				45BF6F061D05CE4700FF5C24 /* DEMODataSource.m in Sources */,
 				453AEE211D05C8E700A28C4F /* MLPAutoCompleteTextField.m in Sources */,
 				453AEE281D05CB1F00A28C4F /* DEMOCustomAutoCompleteCell.m in Sources */,
-				453AEE081D05C04200A28C4F /* FormViewModel.m in Sources */,
 				450AB4461D05A8B900DAE116 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

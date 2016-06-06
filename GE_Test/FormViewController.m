@@ -7,14 +7,12 @@
 //
 
 #import "FormViewController.h"
-#import "FormViewModel.h"
 #import "MLPAutoCompleteTextFieldDelegate.h"
 #import "MLPAutoCompleteTextField.h"
 #import "DEMOCustomAutoCompleteCell.h"
 
 @interface FormViewController () <MLPAutoCompleteTextFieldDelegate>
 
-@property (nonatomic, strong) FormViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldFrom;
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldTo;
 
@@ -31,20 +29,11 @@
 
 #pragma mark - initUI
 - (void)initUI {
-    _viewModel = [[FormViewModel alloc] initWithDelegate:self];
-    [self showLoadingIndicator];
-    [_viewModel getLocationsForKeyword:@"ham"];
-    
     // Textfield configuration
     [self.textFieldFrom registerAutoCompleteCellClass:[DEMOCustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];    
     [self.textFieldTo registerAutoCompleteCellClass:[DEMOCustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
 
 
-}
-
-- (void) updateUI {
-    NSLog(@"%@", _viewModel.locationList);
-    [self hideLoadingIndicator];
 }
 
 #pragma mark - Memory Warning

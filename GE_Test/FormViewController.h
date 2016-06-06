@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewModelUpdateUIDelegate.h"
 #import "ParentViewController.h"
 #import "DEMODataSource.h"
 
-@interface FormViewController : ParentViewController <UITextFieldDelegate, ViewModelUpdateUIDelegate>
+@interface FormViewController : ParentViewController <UITextFieldDelegate>
 
 @end
