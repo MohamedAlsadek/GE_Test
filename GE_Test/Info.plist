@@ -45,5 +45,12 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>&quot;goeuro&quot; would like to use your current location</string>
+    
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+    
 </dict>
 </plist>

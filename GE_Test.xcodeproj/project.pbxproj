@@ -16,6 +16,10 @@
 		450AB45F1D05A8B900DAE116 /* GE_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB45E1D05A8B900DAE116 /* GE_TestTests.m */; };
 		450AB46A1D05A8B900DAE116 /* GE_TestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4691D05A8B900DAE116 /* GE_TestUITests.m */; };
 		450AB4791D05AB5200DAE116 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4781D05AB5200DAE116 /* LocationService.m */; };
+		450AB4821D05AECD00DAE116 /* HttpSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4811D05AECD00DAE116 /* HttpSessionManager.m */; };
+		450AB4861D05B06600DAE116 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4851D05B06600DAE116 /* Location.m */; };
+		450AB48A1D05B35A00DAE116 /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4891D05B35A00DAE116 /* APIService.m */; };
+		450AB48E1D05B49400DAE116 /* LocationDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB48D1D05B49400DAE116 /* LocationDataService.m */; };
 		F7C27B214DC74A1AEED0FFBC /* libPods-GE_Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0E07CC57C8952E67084C09 /* libPods-GE_Test.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +60,15 @@
 		450AB46B1D05A8BA00DAE116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450AB4771D05AB5200DAE116 /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
 		450AB4781D05AB5200DAE116 /* LocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
+		450AB4801D05AECD00DAE116 /* HttpSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpSessionManager.h; sourceTree = "<group>"; };
+		450AB4811D05AECD00DAE116 /* HttpSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpSessionManager.m; sourceTree = "<group>"; };
+		450AB4831D05AEE800DAE116 /* APIParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIParams.h; sourceTree = "<group>"; };
+		450AB4841D05B06600DAE116 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		450AB4851D05B06600DAE116 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		450AB4881D05B35A00DAE116 /* APIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIService.h; sourceTree = "<group>"; };
+		450AB4891D05B35A00DAE116 /* APIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIService.m; sourceTree = "<group>"; };
+		450AB48C1D05B49400DAE116 /* LocationDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDataService.h; sourceTree = "<group>"; };
+		450AB48D1D05B49400DAE116 /* LocationDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataService.m; sourceTree = "<group>"; };
 		CD0E07CC57C8952E67084C09 /* libPods-GE_Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GE_Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8D846A0726FF6BDF228F20 /* Pods-GE_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GE_Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GE_Test/Pods-GE_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +129,7 @@
 				450AB4501D05A8B900DAE116 /* Assets.xcassets */,
 				450AB47A1D05AB7B00DAE116 /* Classes */,
 				450AB4551D05A8B900DAE116 /* Info.plist */,
+				450AB4871D05B06900DAE116 /* Models */,
 				450AB4441D05A8B900DAE116 /* Supporting Files */,
 			);
 			path = GE_Test;
@@ -159,8 +173,9 @@
 		450AB47B1D05AB8900DAE116 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				450AB4771D05AB5200DAE116 /* LocationService.h */,
-				450AB4781D05AB5200DAE116 /* LocationService.m */,
+				450AB47F1D05AEA800DAE116 /* LocationService */,
+				450AB48B1D05B36A00DAE116 /* APIService */,
+				450AB48F1D05B49800DAE116 /* LocationDataSercie */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -190,6 +205,45 @@
 				450AB44B1D05A8B900DAE116 /* ViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		450AB47F1D05AEA800DAE116 /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				450AB4771D05AB5200DAE116 /* LocationService.h */,
+				450AB4781D05AB5200DAE116 /* LocationService.m */,
+			);
+			name = LocationService;
+			sourceTree = "<group>";
+		};
+		450AB4871D05B06900DAE116 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				450AB4841D05B06600DAE116 /* Location.h */,
+				450AB4851D05B06600DAE116 /* Location.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		450AB48B1D05B36A00DAE116 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				450AB4831D05AEE800DAE116 /* APIParams.h */,
+				450AB4801D05AECD00DAE116 /* HttpSessionManager.h */,
+				450AB4811D05AECD00DAE116 /* HttpSessionManager.m */,
+				450AB4881D05B35A00DAE116 /* APIService.h */,
+				450AB4891D05B35A00DAE116 /* APIService.m */,
+			);
+			name = APIService;
+			sourceTree = "<group>";
+		};
+		450AB48F1D05B49800DAE116 /* LocationDataSercie */ = {
+			isa = PBXGroup;
+			children = (
+				450AB48C1D05B49400DAE116 /* LocationDataService.h */,
+				450AB48D1D05B49400DAE116 /* LocationDataService.m */,
+			);
+			name = LocationDataSercie;
 			sourceTree = "<group>";
 		};
 		79C90B0EAE6B1DF5F41DE34C /* Frameworks */ = {
@@ -390,9 +444,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450AB4821D05AECD00DAE116 /* HttpSessionManager.m in Sources */,
+				450AB48A1D05B35A00DAE116 /* APIService.m in Sources */,
 				450AB44C1D05A8B900DAE116 /* ViewController.m in Sources */,
 				450AB4491D05A8B900DAE116 /* AppDelegate.m in Sources */,
+				450AB48E1D05B49400DAE116 /* LocationDataService.m in Sources */,
 				450AB4791D05AB5200DAE116 /* LocationService.m in Sources */,
+				450AB4861D05B06600DAE116 /* Location.m in Sources */,
 				450AB4461D05A8B900DAE116 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
