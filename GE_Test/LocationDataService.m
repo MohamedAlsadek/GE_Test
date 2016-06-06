@@ -16,9 +16,6 @@
     APIService *apiService = [[APIService alloc] init];
     
     [apiService getSuggestLocationsForKeyword:keyword :^(id result) {
-//        BOOL temp1 = (result) ;
-//        BOOL temp2 = (![result isEqual:[NSNull null]]);
-//        BOOL temp3 = ([result isKindOfClass:[NSDictionary class]]);
         
         if (result && ![result isEqual:[NSNull null]] && [result isKindOfClass:[NSArray class]]) {
             if (success) {

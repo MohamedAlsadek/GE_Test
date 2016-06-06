@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		450AB4461D05A8B900DAE116 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4451D05A8B900DAE116 /* main.m */; };
 		450AB4491D05A8B900DAE116 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4481D05A8B900DAE116 /* AppDelegate.m */; };
-		450AB44C1D05A8B900DAE116 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB44B1D05A8B900DAE116 /* ViewController.m */; };
 		450AB44F1D05A8B900DAE116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 450AB44D1D05A8B900DAE116 /* Main.storyboard */; };
 		450AB4511D05A8B900DAE116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 450AB4501D05A8B900DAE116 /* Assets.xcassets */; };
 		450AB4541D05A8B900DAE116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 450AB4521D05A8B900DAE116 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,10 @@
 		450AB4861D05B06600DAE116 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4851D05B06600DAE116 /* Location.m */; };
 		450AB48A1D05B35A00DAE116 /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4891D05B35A00DAE116 /* APIService.m */; };
 		450AB48E1D05B49400DAE116 /* LocationDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB48D1D05B49400DAE116 /* LocationDataService.m */; };
+		453AEE081D05C04200A28C4F /* FormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE071D05C04200A28C4F /* FormViewModel.m */; };
+		453AEE0C1D05C05D00A28C4F /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE0B1D05C05D00A28C4F /* FormViewController.m */; };
+		453AEE151D05C69B00A28C4F /* LayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE141D05C69B00A28C4F /* LayoutManager.m */; };
+		453AEE191D05C6B700A28C4F /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE181D05C6B700A28C4F /* ParentViewController.m */; };
 		F7C27B214DC74A1AEED0FFBC /* libPods-GE_Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0E07CC57C8952E67084C09 /* libPods-GE_Test.a */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +49,6 @@
 		450AB4451D05A8B900DAE116 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		450AB4471D05A8B900DAE116 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		450AB4481D05A8B900DAE116 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		450AB44A1D05A8B900DAE116 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		450AB44B1D05A8B900DAE116 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		450AB44E1D05A8B900DAE116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		450AB4501D05A8B900DAE116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		450AB4531D05A8B900DAE116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +70,15 @@
 		450AB4891D05B35A00DAE116 /* APIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIService.m; sourceTree = "<group>"; };
 		450AB48C1D05B49400DAE116 /* LocationDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDataService.h; sourceTree = "<group>"; };
 		450AB48D1D05B49400DAE116 /* LocationDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataService.m; sourceTree = "<group>"; };
+		453AEE061D05C04200A28C4F /* FormViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewModel.h; sourceTree = "<group>"; };
+		453AEE071D05C04200A28C4F /* FormViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewModel.m; sourceTree = "<group>"; };
+		453AEE0A1D05C05D00A28C4F /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
+		453AEE0B1D05C05D00A28C4F /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
+		453AEE0D1D05C22B00A28C4F /* ViewModelUpdateUIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelUpdateUIDelegate.h; sourceTree = "<group>"; };
+		453AEE131D05C69B00A28C4F /* LayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutManager.h; sourceTree = "<group>"; };
+		453AEE141D05C69B00A28C4F /* LayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutManager.m; sourceTree = "<group>"; };
+		453AEE171D05C6B700A28C4F /* ParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
+		453AEE181D05C6B700A28C4F /* ParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewController.m; sourceTree = "<group>"; };
 		CD0E07CC57C8952E67084C09 /* libPods-GE_Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GE_Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8D846A0726FF6BDF228F20 /* Pods-GE_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GE_Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GE_Test/Pods-GE_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,8 +174,10 @@
 		450AB47A1D05AB7B00DAE116 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				453AEE161D05C69F00A28C4F /* Utilities */,
 				450AB47B1D05AB8900DAE116 /* Services */,
 				450AB47C1D05ABA000DAE116 /* UI */,
+				453AEE121D05C5B500A28C4F /* UIViewController+Loading */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -185,6 +197,7 @@
 			children = (
 				450AB47E1D05ABC300DAE116 /* ViewControllers */,
 				450AB47D1D05ABAD00DAE116 /* Storyboards */,
+				453AEE091D05C04600A28C4F /* ViewModels */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -201,8 +214,10 @@
 		450AB47E1D05ABC300DAE116 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				450AB44A1D05A8B900DAE116 /* ViewController.h */,
-				450AB44B1D05A8B900DAE116 /* ViewController.m */,
+				453AEE171D05C6B700A28C4F /* ParentViewController.h */,
+				453AEE181D05C6B700A28C4F /* ParentViewController.m */,
+				453AEE0A1D05C05D00A28C4F /* FormViewController.h */,
+				453AEE0B1D05C05D00A28C4F /* FormViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -244,6 +259,32 @@
 				450AB48D1D05B49400DAE116 /* LocationDataService.m */,
 			);
 			name = LocationDataSercie;
+			sourceTree = "<group>";
+		};
+		453AEE091D05C04600A28C4F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				453AEE0D1D05C22B00A28C4F /* ViewModelUpdateUIDelegate.h */,
+				453AEE061D05C04200A28C4F /* FormViewModel.h */,
+				453AEE071D05C04200A28C4F /* FormViewModel.m */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		453AEE121D05C5B500A28C4F /* UIViewController+Loading */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "UIViewController+Loading";
+			sourceTree = "<group>";
+		};
+		453AEE161D05C69F00A28C4F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				453AEE131D05C69B00A28C4F /* LayoutManager.h */,
+				453AEE141D05C69B00A28C4F /* LayoutManager.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		79C90B0EAE6B1DF5F41DE34C /* Frameworks */ = {
@@ -446,11 +487,14 @@
 			files = (
 				450AB4821D05AECD00DAE116 /* HttpSessionManager.m in Sources */,
 				450AB48A1D05B35A00DAE116 /* APIService.m in Sources */,
-				450AB44C1D05A8B900DAE116 /* ViewController.m in Sources */,
 				450AB4491D05A8B900DAE116 /* AppDelegate.m in Sources */,
 				450AB48E1D05B49400DAE116 /* LocationDataService.m in Sources */,
+				453AEE191D05C6B700A28C4F /* ParentViewController.m in Sources */,
 				450AB4791D05AB5200DAE116 /* LocationService.m in Sources */,
 				450AB4861D05B06600DAE116 /* Location.m in Sources */,
+				453AEE0C1D05C05D00A28C4F /* FormViewController.m in Sources */,
+				453AEE151D05C69B00A28C4F /* LayoutManager.m in Sources */,
+				453AEE081D05C04200A28C4F /* FormViewModel.m in Sources */,
 				450AB4461D05A8B900DAE116 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
