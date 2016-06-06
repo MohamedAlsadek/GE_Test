@@ -20,13 +20,11 @@
 		450AB48A1D05B35A00DAE116 /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB4891D05B35A00DAE116 /* APIService.m */; };
 		450AB48E1D05B49400DAE116 /* LocationDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AB48D1D05B49400DAE116 /* LocationDataService.m */; };
 		453AEE0C1D05C05D00A28C4F /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE0B1D05C05D00A28C4F /* FormViewController.m */; };
-		453AEE151D05C69B00A28C4F /* LayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE141D05C69B00A28C4F /* LayoutManager.m */; };
-		453AEE191D05C6B700A28C4F /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE181D05C6B700A28C4F /* ParentViewController.m */; };
 		453AEE211D05C8E700A28C4F /* MLPAutoCompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE1B1D05C8E700A28C4F /* MLPAutoCompleteTextField.m */; };
 		453AEE221D05C8E700A28C4F /* NSString+Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE201D05C8E700A28C4F /* NSString+Levenshtein.m */; };
-		453AEE281D05CB1F00A28C4F /* DEMOCustomAutoCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE251D05CB1F00A28C4F /* DEMOCustomAutoCompleteCell.m */; };
-		453AEE291D05CB1F00A28C4F /* DEMOCustomAutoCompleteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE271D05CB1F00A28C4F /* DEMOCustomAutoCompleteObject.m */; };
-		45BF6F061D05CE4700FF5C24 /* DEMODataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BF6F051D05CE4700FF5C24 /* DEMODataSource.m */; };
+		453AEE281D05CB1F00A28C4F /* CustomAutoCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE251D05CB1F00A28C4F /* CustomAutoCompleteCell.m */; };
+		453AEE291D05CB1F00A28C4F /* CustomAutoCompleteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 453AEE271D05CB1F00A28C4F /* CustomAutoCompleteObject.m */; };
+		45BF6F061D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BF6F051D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.m */; };
 		F7C27B214DC74A1AEED0FFBC /* libPods-GE_Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0E07CC57C8952E67084C09 /* libPods-GE_Test.a */; };
 /* End PBXBuildFile section */
 
@@ -76,10 +74,6 @@
 		450AB48D1D05B49400DAE116 /* LocationDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDataService.m; sourceTree = "<group>"; };
 		453AEE0A1D05C05D00A28C4F /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
 		453AEE0B1D05C05D00A28C4F /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
-		453AEE131D05C69B00A28C4F /* LayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutManager.h; sourceTree = "<group>"; };
-		453AEE141D05C69B00A28C4F /* LayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutManager.m; sourceTree = "<group>"; };
-		453AEE171D05C6B700A28C4F /* ParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
-		453AEE181D05C6B700A28C4F /* ParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewController.m; sourceTree = "<group>"; };
 		453AEE1A1D05C8E700A28C4F /* MLPAutoCompleteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextField.h; sourceTree = "<group>"; };
 		453AEE1B1D05C8E700A28C4F /* MLPAutoCompleteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPAutoCompleteTextField.m; sourceTree = "<group>"; };
 		453AEE1C1D05C8E700A28C4F /* MLPAutoCompleteTextFieldDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextFieldDataSource.h; sourceTree = "<group>"; };
@@ -87,12 +81,12 @@
 		453AEE1E1D05C8E700A28C4F /* MLPAutoCompletionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompletionObject.h; sourceTree = "<group>"; };
 		453AEE1F1D05C8E700A28C4F /* NSString+Levenshtein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Levenshtein.h"; sourceTree = "<group>"; };
 		453AEE201D05C8E700A28C4F /* NSString+Levenshtein.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Levenshtein.m"; sourceTree = "<group>"; };
-		453AEE241D05CB1F00A28C4F /* DEMOCustomAutoCompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOCustomAutoCompleteCell.h; sourceTree = "<group>"; };
-		453AEE251D05CB1F00A28C4F /* DEMOCustomAutoCompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOCustomAutoCompleteCell.m; sourceTree = "<group>"; };
-		453AEE261D05CB1F00A28C4F /* DEMOCustomAutoCompleteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOCustomAutoCompleteObject.h; sourceTree = "<group>"; };
-		453AEE271D05CB1F00A28C4F /* DEMOCustomAutoCompleteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOCustomAutoCompleteObject.m; sourceTree = "<group>"; };
-		45BF6F041D05CE4700FF5C24 /* DEMODataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMODataSource.h; sourceTree = "<group>"; };
-		45BF6F051D05CE4700FF5C24 /* DEMODataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMODataSource.m; sourceTree = "<group>"; };
+		453AEE241D05CB1F00A28C4F /* CustomAutoCompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAutoCompleteCell.h; sourceTree = "<group>"; };
+		453AEE251D05CB1F00A28C4F /* CustomAutoCompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAutoCompleteCell.m; sourceTree = "<group>"; };
+		453AEE261D05CB1F00A28C4F /* CustomAutoCompleteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAutoCompleteObject.h; sourceTree = "<group>"; };
+		453AEE271D05CB1F00A28C4F /* CustomAutoCompleteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAutoCompleteObject.m; sourceTree = "<group>"; };
+		45BF6F041D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutocompleteTextFieldDataSource.h; sourceTree = "<group>"; };
+		45BF6F051D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutocompleteTextFieldDataSource.m; sourceTree = "<group>"; };
 		CD0E07CC57C8952E67084C09 /* libPods-GE_Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GE_Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8D846A0726FF6BDF228F20 /* Pods-GE_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GE_Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GE_Test/Pods-GE_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				453AEE231D05C8EB00A28C4F /* MLPAutoComplete */,
-				453AEE161D05C69F00A28C4F /* Utilities */,
 				450AB47B1D05AB8900DAE116 /* Services */,
 				450AB47C1D05ABA000DAE116 /* UI */,
 			);
@@ -227,8 +220,6 @@
 		450AB47E1D05ABC300DAE116 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				453AEE171D05C6B700A28C4F /* ParentViewController.h */,
-				453AEE181D05C6B700A28C4F /* ParentViewController.m */,
 				453AEE0A1D05C05D00A28C4F /* FormViewController.h */,
 				453AEE0B1D05C05D00A28C4F /* FormViewController.m */,
 			);
@@ -274,19 +265,10 @@
 			name = LocationDataSercie;
 			sourceTree = "<group>";
 		};
-		453AEE161D05C69F00A28C4F /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				453AEE131D05C69B00A28C4F /* LayoutManager.h */,
-				453AEE141D05C69B00A28C4F /* LayoutManager.m */,
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
 		453AEE231D05C8EB00A28C4F /* MLPAutoComplete */ = {
 			isa = PBXGroup;
 			children = (
-				453AEE2A1D05CC8000A28C4F /* demo */,
+				453AEE2A1D05CC8000A28C4F /* AutoCompleteUtils */,
 				453AEE1A1D05C8E700A28C4F /* MLPAutoCompleteTextField.h */,
 				453AEE1B1D05C8E700A28C4F /* MLPAutoCompleteTextField.m */,
 				453AEE1C1D05C8E700A28C4F /* MLPAutoCompleteTextFieldDataSource.h */,
@@ -298,17 +280,17 @@
 			name = MLPAutoComplete;
 			sourceTree = "<group>";
 		};
-		453AEE2A1D05CC8000A28C4F /* demo */ = {
+		453AEE2A1D05CC8000A28C4F /* AutoCompleteUtils */ = {
 			isa = PBXGroup;
 			children = (
-				45BF6F041D05CE4700FF5C24 /* DEMODataSource.h */,
-				45BF6F051D05CE4700FF5C24 /* DEMODataSource.m */,
-				453AEE241D05CB1F00A28C4F /* DEMOCustomAutoCompleteCell.h */,
-				453AEE251D05CB1F00A28C4F /* DEMOCustomAutoCompleteCell.m */,
-				453AEE261D05CB1F00A28C4F /* DEMOCustomAutoCompleteObject.h */,
-				453AEE271D05CB1F00A28C4F /* DEMOCustomAutoCompleteObject.m */,
+				45BF6F041D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.h */,
+				45BF6F051D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.m */,
+				453AEE241D05CB1F00A28C4F /* CustomAutoCompleteCell.h */,
+				453AEE251D05CB1F00A28C4F /* CustomAutoCompleteCell.m */,
+				453AEE261D05CB1F00A28C4F /* CustomAutoCompleteObject.h */,
+				453AEE271D05CB1F00A28C4F /* CustomAutoCompleteObject.m */,
 			);
-			name = demo;
+			name = AutoCompleteUtils;
 			sourceTree = "<group>";
 		};
 		79C90B0EAE6B1DF5F41DE34C /* Frameworks */ = {
@@ -511,18 +493,16 @@
 			files = (
 				450AB4821D05AECD00DAE116 /* HttpSessionManager.m in Sources */,
 				450AB48A1D05B35A00DAE116 /* APIService.m in Sources */,
-				453AEE291D05CB1F00A28C4F /* DEMOCustomAutoCompleteObject.m in Sources */,
+				453AEE291D05CB1F00A28C4F /* CustomAutoCompleteObject.m in Sources */,
 				450AB4491D05A8B900DAE116 /* AppDelegate.m in Sources */,
 				450AB48E1D05B49400DAE116 /* LocationDataService.m in Sources */,
-				453AEE191D05C6B700A28C4F /* ParentViewController.m in Sources */,
 				450AB4791D05AB5200DAE116 /* LocationService.m in Sources */,
 				453AEE221D05C8E700A28C4F /* NSString+Levenshtein.m in Sources */,
 				450AB4861D05B06600DAE116 /* Location.m in Sources */,
 				453AEE0C1D05C05D00A28C4F /* FormViewController.m in Sources */,
-				453AEE151D05C69B00A28C4F /* LayoutManager.m in Sources */,
-				45BF6F061D05CE4700FF5C24 /* DEMODataSource.m in Sources */,
+				45BF6F061D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.m in Sources */,
 				453AEE211D05C8E700A28C4F /* MLPAutoCompleteTextField.m in Sources */,
-				453AEE281D05CB1F00A28C4F /* DEMOCustomAutoCompleteCell.m in Sources */,
+				453AEE281D05CB1F00A28C4F /* CustomAutoCompleteCell.m in Sources */,
 				450AB4461D05A8B900DAE116 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

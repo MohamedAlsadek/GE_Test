@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Mainloop. All rights reserved.
 //
 
-#import "DEMOCustomAutoCompleteCell.h"
+#import "CustomAutoCompleteCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation DEMOCustomAutoCompleteCell
+@implementation CustomAutoCompleteCell
 
 - (id)init
 {

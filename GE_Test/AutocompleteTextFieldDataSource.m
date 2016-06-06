@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Mainloop. All rights reserved.
 //
 
-#import "DEMODataSource.h"
-#import "DEMOCustomAutoCompleteObject.h"
+#import "AutocompleteTextFieldDataSource.h"
+#import "CustomAutoCompleteObject.h"
 #import "LocationDataService.h"
 
-@interface DEMODataSource ()
+@interface AutocompleteTextFieldDataSource ()
 
 @property (strong, nonatomic) LocationDataService *locationDataService;
 @property (strong, nonatomic) NSArray *countryObjects;
@@ -18,7 +18,7 @@
 @end
 
 
-@implementation DEMODataSource
+@implementation AutocompleteTextFieldDataSource
 
 
 #pragma mark - MLPAutoCompleteTextField DataSource
@@ -72,7 +72,7 @@
         NSArray *countryNames = [self allCountries];
         NSMutableArray *mutableCountries = [NSMutableArray new];
         for(NSString *countryName in countryNames){
-            DEMOCustomAutoCompleteObject *country = [[DEMOCustomAutoCompleteObject alloc] initWithCountry:countryName];
+            CustomAutoCompleteObject *country = [[CustomAutoCompleteObject alloc] initWithCountry:countryName];
             [mutableCountries addObject:country];
         }
         

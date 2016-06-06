@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Mainloop. All rights reserved.
 //
 
-#import "DEMOCustomAutoCompleteObject.h"
+#import "CustomAutoCompleteObject.h"
 
-@interface DEMOCustomAutoCompleteObject ()
+@interface CustomAutoCompleteObject ()
 @property (strong) NSString *countryName;
 @end
 
-@implementation DEMOCustomAutoCompleteObject
+@implementation CustomAutoCompleteObject
 
 
 - (id)initWithCountry:(NSString *)name

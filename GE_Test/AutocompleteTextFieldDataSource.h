@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MLPAutoCompleteTextFieldDataSource.h"
 
-@interface DEMODataSource : NSObject <MLPAutoCompleteTextFieldDataSource>
+@interface AutocompleteTextFieldDataSource : NSObject <MLPAutoCompleteTextFieldDataSource>
 
 
 //Set this to true to return an array of autocomplete objects to the autocomplete textfield instead of strings.

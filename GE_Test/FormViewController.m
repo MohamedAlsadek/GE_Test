@@ -9,7 +9,7 @@
 #import "FormViewController.h"
 #import "MLPAutoCompleteTextFieldDelegate.h"
 #import "MLPAutoCompleteTextField.h"
-#import "DEMOCustomAutoCompleteCell.h"
+#import "CustomAutoCompleteCell.h"
 
 @interface FormViewController () <MLPAutoCompleteTextFieldDelegate>
 
@@ -30,8 +30,8 @@
 #pragma mark - initUI
 - (void)initUI {
     // Textfield configuration
-    [self.textFieldFrom registerAutoCompleteCellClass:[DEMOCustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];    
-    [self.textFieldTo registerAutoCompleteCellClass:[DEMOCustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
+    [self.textFieldFrom registerAutoCompleteCellClass:[CustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
+    [self.textFieldTo registerAutoCompleteCellClass:[CustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
 
 
 }
