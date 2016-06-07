@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AutocompleteTextFieldDataSource.h"
+#import "MLPAutoCompletionObject.h"
+
 @interface FormViewController : UIViewController <UITextFieldDelegate>
 
 @end

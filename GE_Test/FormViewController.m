@@ -12,14 +12,19 @@
 #import "CustomAutoCompleteCell.h"
 #import "RMDateSelectionViewController.h"
 #import "LocationService.h"
+#import <pop/POP.h>
 
 @interface FormViewController () <MLPAutoCompleteTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldFrom;
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldTo;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldDate;
- 
 @property (weak, nonatomic) IBOutlet UIButton *buttonSearch;
+
+//Animation Views
+@property (weak, nonatomic) IBOutlet UIView *viewHeader;
+@property (weak, nonatomic) IBOutlet UIView *viewForm;
+
 
 @end
 
@@ -28,18 +33,73 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self initUI];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self appearWithAnimation];
 }
 
 #pragma mark - initUI
 - (void)initUI {
+    self.viewForm.hidden = NO;
+    self.viewHeader.hidden = NO;
+    [self configureElements];
+    [self appearWithAnimation];
+}
+
+-(void)configureElements {
+    self.buttonSearch.hidden = YES;
+    
     // Textfield configuration
     [self.textFieldFrom registerAutoCompleteCellClass:[CustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
+    self.textFieldFrom.delegate = self;
+    
     [self.textFieldTo registerAutoCompleteCellClass:[CustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
+    self.textFieldTo.delegate = self;
     
     self.textFieldDate.delegate = self;
+}
 
+- (void)endEditing {
+    [self.view endEditing:YES];
+}
+
+
+#pragma - mark - Animations
+- (void)appearWithAnimation {
+    // Animation Header View
+    
+    self.viewForm.hidden = NO;
+    self.viewHeader.hidden = NO;
+    [self animateHeaderView];
+    [self animateViewForm];
+}
+
+- (void)animateHeaderView {
+    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    anim.fromValue = @(0.0);
+    anim.toValue = @(1.0);
+    [self.viewHeader pop_addAnimation:anim forKey:@"fade"];
+}
+
+- (void)animateViewForm {
+    POPSpringAnimation *spin = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    
+    spin.fromValue = @(M_PI / 4);
+    spin.toValue = @(0);
+    spin.springBounciness = 20;
+    spin.velocity = @(10);
+    [self.viewForm.layer pop_addAnimation:spin forKey:@"likeAnimation"];
+}
+
+-(void)animateSearchButton {
+    POPSpringAnimation *sprintAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    sprintAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(0.9, 0.9)];
+    sprintAnimation.velocity = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
+    sprintAnimation.springBounciness = 20.f;
+    [self.buttonSearch  pop_addAnimation:sprintAnimation forKey:@"springAnimation"];
 }
 
 #pragma mark - Memory Warning
@@ -83,9 +143,10 @@
 
 - (IBAction)actionSearch:(id)sender {
     // make sure to dismiss all keyboards
-    [self.view endEditing:YES];
+    [self endEditing];
+    [self animateSearchButton];
     
-    }
+}
 
 #pragma mark - DatePicker Handling
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
@@ -96,6 +157,22 @@
     return YES;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self checkFormCompleted];
+}
+
+- (void)checkFormCompleted {
+    if (![self.textFieldTo.text isEqualToString:@""] &&
+        ![self.textFieldFrom.text isEqualToString:@""] &&
+        ![self.textFieldDate.text isEqualToString:@""]) {
+        
+        self.buttonSearch.hidden = NO;
+    }
+    else {
+        self.buttonSearch.hidden = YES;
+    }
+}
+
 - (void)presentDatePicker {
     //Create select action
     RMAction *selectAction = [RMAction actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController *controller) {
@@ -104,6 +181,7 @@
         [formatter setDateFormat:@"yyyy-MM-dd"];
         NSString *stringFromDate = [formatter stringFromDate:((UIDatePicker *)controller.contentView).date];
         self.textFieldDate.text = stringFromDate;
+        [self checkFormCompleted];
     }];
     
     //Create cancel action
