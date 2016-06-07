@@ -11,13 +11,14 @@
 #import "MLPAutoCompleteTextField.h"
 #import "CustomAutoCompleteCell.h"
 #import "RMDateSelectionViewController.h"
+#import "LocationService.h"
 
 @interface FormViewController () <MLPAutoCompleteTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldFrom;
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldTo;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldDate;
-
+ 
 @property (weak, nonatomic) IBOutlet UIButton *buttonSearch;
 
 @end
@@ -84,7 +85,7 @@
     // make sure to dismiss all keyboards
     [self.view endEditing:YES];
     
-}
+    }
 
 #pragma mark - DatePicker Handling
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {

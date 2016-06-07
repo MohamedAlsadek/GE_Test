@@ -7,7 +7,8 @@
 //
 
 #import "LocationService.h"
-
+#import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
 
 @interface LocationService ()<CLLocationManagerDelegate>
 
@@ -15,8 +16,8 @@
 
 @end
 
-
 @implementation LocationService
+
 
 - (void)startUpdatingLocation   {
     
@@ -26,11 +27,9 @@
         [self.gps setDesiredAccuracy:kCLLocationAccuracyBest];
         
         if (![self isLocationServicesEnabled]) {
-            
-            if (self.updateLocation) {
-                self.updateLocation(CLLocationCoordinate2DMake(0, 0), @"Can't find user location, please enable location service");
+            if (self.updateLocationDelegate && [self.updateLocationDelegate respondsToSelector:@selector(didFailWithError:)]) {
+                [self.updateLocationDelegate didFailWithError:@"Location Services is disabled!"];
             }
-            
             return;
         }
         switch ([CLLocationManager authorizationStatus]) {
@@ -38,10 +37,8 @@
             case kCLAuthorizationStatusRestricted:
             {
                 // Error AuthorizationStatusRestricted
-                
-                if (self.updateLocation) {
-                    self.updateLocation(CLLocationCoordinate2DMake(0, 0), @"Can't get userlocation, please enable location service");
-                    self.updateLocation = nil;
+                if (self.updateLocationDelegate && [self.updateLocationDelegate respondsToSelector:@selector(didFailWithError:)]) {
+                    [self.updateLocationDelegate didFailWithError:@"Fitness cannot use your location. Kindly authorize it from Location Services Settings."];
                 }
                 return;
             }
@@ -72,30 +69,28 @@
 }
 
 - (void)stopUpdatingLocation    {
-    
     [self.gps stopUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error  {
     // Error get location
     
-    [self stopUpdatingLocation];
-    __weak __typeof(self)weakSelf = self;
-    if (weakSelf.updateLocation) {
-        weakSelf.updateLocation(CLLocationCoordinate2DMake(0, 0), error.localizedDescription);
-        weakSelf.updateLocation = nil;
+    if (self.updateLocationDelegate && [self.updateLocationDelegate respondsToSelector:@selector(didFailWithError:)]) {
+        [self.updateLocationDelegate didFailWithError:error.localizedDescription];
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation   {
-    NSLog(@"didUpdateToLocation: %@", newLocation);
     
-    __weak __typeof(self)weakSelf = self;
-    if (weakSelf.updateLocation) {
-        [weakSelf stopUpdatingLocation];
-        weakSelf.updateLocation(newLocation.coordinate, nil);
-        weakSelf.updateLocation = nil;
+    [self stopUpdatingLocation];
+    if (newLocation) {
+        if (self.updateLocationDelegate && [self.updateLocationDelegate respondsToSelector:@selector(didFailWithError:)]) {
+            
+            NSLog(@"%f, %f" , newLocation.coordinate.latitude , newLocation.coordinate.longitude);
+            [self.updateLocationDelegate didUpdateWithLocation:newLocation];
+        }
     }
+    self.updateLocationDelegate = nil; // after successfull returning remove the delegate pointer
 }
 
 @end

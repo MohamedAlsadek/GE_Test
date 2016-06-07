@@ -87,6 +87,7 @@
 		453AEE271D05CB1F00A28C4F /* CustomAutoCompleteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAutoCompleteObject.m; sourceTree = "<group>"; };
 		45BF6F041D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutocompleteTextFieldDataSource.h; sourceTree = "<group>"; };
 		45BF6F051D05CE4700FF5C24 /* AutocompleteTextFieldDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutocompleteTextFieldDataSource.m; sourceTree = "<group>"; };
+		45CDAF8D1D0781ED0071DB07 /* UpdateCurrentUserAddressesDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateCurrentUserAddressesDelegate.h; sourceTree = "<group>"; };
 		CD0E07CC57C8952E67084C09 /* libPods-GE_Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GE_Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8D846A0726FF6BDF228F20 /* Pods-GE_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GE_Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GE_Test/Pods-GE_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +230,7 @@
 		450AB47F1D05AEA800DAE116 /* LocationService */ = {
 			isa = PBXGroup;
 			children = (
+				45CDAF8D1D0781ED0071DB07 /* UpdateCurrentUserAddressesDelegate.h */,
 				450AB4771D05AB5200DAE116 /* LocationService.h */,
 				450AB4781D05AB5200DAE116 /* LocationService.m */,
 			);

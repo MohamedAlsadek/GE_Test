@@ -9,5 +9,6 @@ target 'GE_Test' do
 
 pod 'AFNetworking', '~> 3.0'
 pod "RMDateSelectionViewController", "~> 2.0.3"
+pod 'pop', '~> 1.0'
 
 end

@@ -11,13 +11,17 @@
 #import "HttpSessionManager.h"
 #import "APIService.h"
 #import "Location.h"
+#import "UpdateCurrentUserAddressesDelegate.h"
+#import "LocationService.h"
 
 
 typedef void(^DataFailureBlock)(NSString *errorMsg);
 typedef void(^DataSuccessBlock)(id result);
 
-@interface LocationDataService : NSObject
+@interface LocationDataService : NSObject <UpdateCurrentUserLocationDelegate>
 
+// Location Service Obj
+@property (strong, nonatomic) LocationService *locationService;
 
 #pragma mark - Location Services
 - (void)getSuggestLocationsForKeyword:(NSString *)keyword :(APISuccessBlock)success failure:(APIFailureBlockWithErrorMessage)failure;

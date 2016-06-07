@@ -27,8 +27,13 @@
 }
 
 - (void)getSuggestLocationsForKeyword:(NSString *)keyword :(APISuccessBlock)success failure:(APIFailureBlockWithErrorMessage)failure {
+    
+    // make sure there is no white spaces in the keyword
+    keyword = [keyword stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
     //set request parameters
     NSString *serviceURL = [NSString stringWithFormat:@"%@%@", kBaseURL,keyword];
+    
     [self.sessionManager getDataFromResource:serviceURL parameters:nil success:success failure:failure];
 }
 

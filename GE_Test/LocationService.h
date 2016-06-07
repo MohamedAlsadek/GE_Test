@@ -8,17 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import <UIKit/UIKit.h>
+#import "UpdateCurrentUserAddressesDelegate.h"
 
 @interface LocationService : NSObject
 
+@property (nonatomic, strong) id <UpdateCurrentUserLocationDelegate> updateLocationDelegate;
 
 - (void)startUpdatingLocation;
 - (void)stopUpdatingLocation;
 
 - (BOOL)isLocationServicesEnabled;
 - (BOOL)hasLocationAccessPermission;
-
-@property (copy, nonatomic) void (^updateLocation)(CLLocationCoordinate2D location, NSString *errorMSG);
 
 @end
