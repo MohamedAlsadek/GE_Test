@@ -10,11 +10,15 @@
 #import "MLPAutoCompleteTextFieldDelegate.h"
 #import "MLPAutoCompleteTextField.h"
 #import "CustomAutoCompleteCell.h"
+#import "RMDateSelectionViewController.h"
 
 @interface FormViewController () <MLPAutoCompleteTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldFrom;
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *textFieldTo;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldDate;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonSearch;
 
 @end
 
@@ -32,7 +36,8 @@
     // Textfield configuration
     [self.textFieldFrom registerAutoCompleteCellClass:[CustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
     [self.textFieldTo registerAutoCompleteCellClass:[CustomAutoCompleteCell class] forCellReuseIdentifier:@"CustomCellId"];
-
+    
+    self.textFieldDate.delegate = self;
 
 }
 
@@ -73,20 +78,46 @@
     }
 }
 
-- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField willHideAutoCompleteTableView:(UITableView *)autoCompleteTableView {
-    NSLog(@"Autocomplete table view will be removed from the view hierarchy");
+#pragma mark - Actions 
+
+- (IBAction)actionSearch:(id)sender {
+    // make sure to dismiss all keyboards
+    [self.view endEditing:YES];
+    
 }
 
-- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField willShowAutoCompleteTableView:(UITableView *)autoCompleteTableView {
-    NSLog(@"Autocomplete table view will be added to the view hierarchy");
+#pragma mark - DatePicker Handling
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == self.textFieldDate) {
+        [self presentDatePicker];
+        return NO;
+    }
+    return YES;
 }
 
-- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField didHideAutoCompleteTableView:(UITableView *)autoCompleteTableView {
-    NSLog(@"Autocomplete table view ws removed from the view hierarchy");
-}
-
-- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField didShowAutoCompleteTableView:(UITableView *)autoCompleteTableView {
-    NSLog(@"Autocomplete table view was added to the view hierarchy");
+- (void)presentDatePicker {
+    //Create select action
+    RMAction *selectAction = [RMAction actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController *controller) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        NSString *stringFromDate = [formatter stringFromDate:((UIDatePicker *)controller.contentView).date];
+        self.textFieldDate.text = stringFromDate;
+    }];
+    
+    //Create cancel action
+    RMAction *cancelAction = [RMAction actionWithTitle:@"Cancel" style:RMActionStyleCancel andHandler:^(RMActionController *controller) {
+        NSLog(@"Date selection was canceled");
+    }];
+    
+    //Create date selection view controller
+    RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:RMActionControllerStyleWhite selectAction:selectAction andCancelAction:cancelAction];
+    dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
+    dateSelectionController.title = @"Trip Date";
+    dateSelectionController.message = @"Please choose your trip date";
+    
+    //Now just present the date selection controller using the standard iOS presentation method
+    [self presentViewController:dateSelectionController animated:YES completion:nil];
 }
 
 @end

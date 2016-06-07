@@ -8,5 +8,6 @@ platform :ios, '8.0'
 target 'GE_Test' do
 
 pod 'AFNetworking', '~> 3.0'
+pod "RMDateSelectionViewController", "~> 2.0.3"
 
 end
