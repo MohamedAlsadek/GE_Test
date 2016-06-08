@@ -15,8 +15,8 @@
 - (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary {
     if(self = [self init]) {
         // Assign all properties with keyed values from the dictionary
-        _latitude = [[jsonDictionary objectForKey:@"latitude"] stringValue];
-        _longitude = [[jsonDictionary objectForKey:@"longitude"] stringValue];
+        _latitude = [[jsonDictionary objectForKey:kLatitude] stringValue];
+        _longitude = [[jsonDictionary objectForKey:kLongitude] stringValue];
     }
     
     return self;
@@ -31,15 +31,15 @@
 - (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary {
     if(self = [self init]) {
         // Assign all properties with keyed values from the dictionary
-        _locationId = [[jsonDictionary objectForKey:@"_id"] stringValue];
-        _locationKey = [jsonDictionary objectForKey:@"key"];
-        _locationName = [jsonDictionary objectForKey:@"name"];
-        _locationFullName = [jsonDictionary objectForKey:@"fullName"];
-        _locationIataAirportCode = [jsonDictionary objectForKey:@"iata_airport_code"];
-        _locationType = [jsonDictionary objectForKey:@"type"];
-        _locationCountry = [jsonDictionary objectForKey:@"country"];
+        _locationId = [[jsonDictionary objectForKey:kId] stringValue];
+        _locationKey = [jsonDictionary objectForKey:kKey];
+        _locationName = [jsonDictionary objectForKey:kName];
+        _locationFullName = [jsonDictionary objectForKey:kFullName];
+        _locationIataAirportCode = [jsonDictionary objectForKey:kIataAirportCode];
+        _locationType = [jsonDictionary objectForKey:kType];
+        _locationCountry = [jsonDictionary objectForKey:kCountry];
         
-        _locationGeoPosition = [[GeoPosition alloc] initWithJSONDictionary:[jsonDictionary objectForKey:@"geo_position"]];
+        _locationGeoPosition = [[GeoPosition alloc] initWithJSONDictionary:[jsonDictionary objectForKey:kGeoPosition]];
     }
     
     return self;
